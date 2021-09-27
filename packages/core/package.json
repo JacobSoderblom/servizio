@@ -1,0 +1,23 @@
+{
+  "name": "@servizio/core",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "yarn watch",
+    "watch": "tsc -w",
+    "build": "tsc",
+    "test": "jest",
+    "test:unit": "jest --expand --coverage --detectOpenHandles"
+  },
+  "packageManager": "yarn@3.0.2",
+  "peerDependencies": {
+    "fp-ts": "^2.11.3"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8",
+    "fp-ts": "^2.11.3"
+  }
+}
