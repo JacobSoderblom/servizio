@@ -1,1 +1,1 @@
-# @servizio/bus
+# @servizio/core
