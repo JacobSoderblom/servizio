@@ -58,7 +58,7 @@ describe('Context', () => {
         )
       );
       const t2 = createToken<number>();
-      const dep2 = bindTo(t2)((_) => 1);
+      const dep2 = bindTo(t2)(() => 3);
 
       const ctx = createContext()(dep1, dep2);
 
@@ -66,7 +66,29 @@ describe('Context', () => {
       expect(ctx.get(t1).fn).toBeDefined();
       expect(ctx.get(t2).fn).toBeDefined();
       expect(ctx.get(t1).fn()(ctx)).toEqual(1);
-      expect(ctx.get(t2).fn()(ctx)).toEqual(1);
+      expect(ctx.get(t2).fn()(ctx)).toEqual(3);
+    });
+
+    test('create context with parent context', () => {
+      const t1 = createToken<number>();
+      const dep1 = bindTo(t1)(
+        pipe(
+          R.ask<Context>(),
+          R.map(() => 1)
+        )
+      );
+      const t2 = createToken<number>();
+      const dep2 = bindTo(t2)(() => 1);
+
+      const ctx1 = createContext()(dep1);
+      const ctx2 = createContext(ctx1)(dep2);
+
+      expect(ctx1.size).toEqual(1);
+      expect(ctx1.get(t1).fn).toBeDefined();
+      expect(ctx1.get(t1).fn()(ctx1)).toEqual(1);
+      expect(ctx2.size).toEqual(2);
+      expect(ctx2.get(t2).fn).toBeDefined();
+      expect(ctx2.get(t2).fn()(ctx2)).toEqual(1);
     });
   });
 
