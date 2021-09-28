@@ -9,7 +9,7 @@
     "lint:fix": "yarn workspaces foreach -tv run lint:fix",
     "test:unit": "yarn workspaces foreach -tv run test:unit",
     "cm": "cz",
-    "prepare": "husky install"
+    "postinstall": "husky install"
   },
   "workspaces": [
     "packages/*"
@@ -49,7 +49,7 @@
     ]
   },
   "lint-staged": {
-    "*.{ts}": [
+    "*.ts": [
       "prettier --write",
       "yarn lint:fix"
     ]
