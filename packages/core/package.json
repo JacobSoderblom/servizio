@@ -8,7 +8,8 @@
     "build": "tsc",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "test:unit": "jest --expand --coverage --detectOpenHandles"
+    "test:unit": "jest --expand --coverage --detectOpenHandles",
+    "test:watch": "jest --expand --detectOpenHandles --watch"
   },
   "packageManager": "yarn@3.0.2",
   "peerDependencies": {

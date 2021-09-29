@@ -8,6 +8,7 @@
     "lint": "yarn workspaces foreach -tv run lint",
     "lint:fix": "yarn workspaces foreach -tv run lint:fix",
     "test:unit": "yarn workspaces foreach -tv run test:unit",
+    "test:watch": "yarn workspaces foreach -tv run test:watch",
     "cm": "cz",
     "postinstall": "is-ci || husky install",
     "prepublishOnly": "pinst --disable",
