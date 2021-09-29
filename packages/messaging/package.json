@@ -1,5 +1,5 @@
 {
-  "name": "@servizio/core",
+  "name": "@servizio/messaging",
   "version": "0.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,6 @@
     "rxjs": "^7.3.0"
   },
   "dependencies": {
-    "pino": "next",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

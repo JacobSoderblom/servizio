@@ -21,10 +21,5 @@
     "lib": ["ES2020"],
     "baseUrl": "."
   },
-  "include": [
-    "./packages/**/*.ts",
-    "./packages/**/*.d.ts",
-    "./packages/**/*.json"
-  ],
   "plugins": [{ "name": "typescript-workspace-plugin" }]
 }
