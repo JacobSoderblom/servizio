@@ -1,8 +1,8 @@
-name: tests ci
+name: build ci
 on: [pull_request]
 jobs:
   test:
-    name: runner / jest
+    name: runner / tsc
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: '12'
       - run: yarn install
-      - run: yarn test:ci
+      - run: yarn build
       - name: Tests ✅
         if: ${{ success() }}
         run: |
