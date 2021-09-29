@@ -975,6 +975,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@servizio/messaging@workspace:packages/messaging":
+  version: 0.0.0-use.local
+  resolution: "@servizio/messaging@workspace:packages/messaging"
+  dependencies:
+    "@types/uuid": ^8
+    fp-ts: ^2.11.3
+    rxjs: ^7.3.0
+    uuid: ^8.3.2
+  peerDependencies:
+    fp-ts: ^2.11.3
+    rxjs: ^7.3.0
+  languageName: unknown
+  linkType: soft
+
 "@sinonjs/commons@npm:^1.7.0":
   version: 1.8.3
   resolution: "@sinonjs/commons@npm:1.8.3"

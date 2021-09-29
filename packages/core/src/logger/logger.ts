@@ -6,15 +6,15 @@ import { createReader } from '../context/helper';
 import { createToken } from '../context/token';
 import { bindTo } from '../context/context';
 
-export const Token = createToken<pino.Logger>('LOGGER');
+export const LoggerToken = createToken<pino.Logger>('LOGGER');
 
 export const createLogger = (
   opts?: pino.LoggerOptions | pino.DestinationStream | undefined
-) => bindTo(Token)(() => pino(opts));
+) => bindTo(LoggerToken)(() => pino(opts));
 
 export const useLogger = createReader((ask) =>
   pipe(
-    ask(Token),
+    ask(LoggerToken),
     O.getOrElse(() => pino())
   )
 );
