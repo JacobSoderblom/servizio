@@ -1,1 +1,1 @@
-# @servizio/core
+# @servizio/messaging

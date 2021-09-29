@@ -9,6 +9,7 @@
     "lint:fix": "yarn workspaces foreach -tv run lint:fix",
     "test:unit": "yarn workspaces foreach -tv run test:unit",
     "test:watch": "yarn workspaces foreach -tv run test:watch",
+    "test:ci": "yarn workspaces foreach -tv run test:ci --reporters='default' --reporters='./jest/github-actions-reporter'",
     "cm": "cz",
     "postinstall": "is-ci || husky install",
     "prepublishOnly": "pinst --disable",
