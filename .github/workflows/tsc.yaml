@@ -12,21 +12,21 @@ jobs:
           node-version: '12'
       - run: yarn install
       - run: yarn build
-      - name: Tests ✅
+      - name: Builds ✅
         if: ${{ success() }}
         run: |
           curl --request POST           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'           --header 'content-type: application/json'           --data '{
-            "context": "tests",
+            "context": "builds",
             "state": "success",
-            "description": "Tests passed",
+            "description": "Builds passed",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
-      - name: Tests 🚨
+      - name: Builds 🚨
         if: ${{ failure() }}
         run: |
           curl --request POST           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'           --header 'content-type: application/json'           --data '{
-            "context": "tests",
+            "context": "builds",
             "state": "failure",
-            "description": "Tests failed",
+            "description": "Builds failed",
             "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }'
