@@ -6,7 +6,7 @@ import {
   createContext,
   bindTo,
   Context,
-  lookup,
+  find,
   addDependency,
   reader,
 } from '../context';
@@ -113,8 +113,8 @@ describe('Context', () => {
 
       const ctx1 = createContext()(bindTo(t1)(dep1), bindTo(t2)(dep2));
 
-      expect(lookup(ctx1)(t1)).toEqual(O.some(1));
-      expect(lookup(ctx1)(t2)).toEqual(O.some(2));
+      expect(find(ctx1)(t1)).toEqual(O.some(1));
+      expect(find(ctx1)(t2)).toEqual(O.some(2));
     });
 
     test('lazy dependency should only initiate once', () => {
@@ -131,8 +131,8 @@ describe('Context', () => {
       const ctx = createContext()(bindTo(token)(dep));
 
       // running expect twice on same value to ensure only one execution
-      expect(lookup(ctx)(token)).toEqual(O.some(1));
-      expect(lookup(ctx)(token)).toEqual(O.some(1));
+      expect(find(ctx)(token)).toEqual(O.some(1));
+      expect(find(ctx)(token)).toEqual(O.some(1));
       expect(spy).toHaveBeenCalledTimes(1);
     });
   });

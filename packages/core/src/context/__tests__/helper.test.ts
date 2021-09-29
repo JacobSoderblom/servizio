@@ -2,7 +2,7 @@ import { pipe } from 'fp-ts/lib/function';
 import * as R from 'fp-ts/lib/Reader';
 import * as O from 'fp-ts/lib/Option';
 
-import { createContext, bindTo, reader, lookup } from '../context';
+import { createContext, bindTo, reader, find } from '../context';
 import { createToken } from '../token';
 import { createReader, useContext } from '../helper';
 
@@ -31,7 +31,7 @@ describe('useContext', () => {
       )
     );
 
-    const ask = lookup(ctx);
+    const ask = find(ctx);
 
     const dep1 = () => useContext(t1)(ask);
     const dep2 = () => useContext(t2)(ask);
@@ -46,7 +46,7 @@ describe('useContext', () => {
 
     const ctx = createContext()(bindTo(t1)(() => 1));
 
-    const ask = lookup(ctx);
+    const ask = find(ctx);
 
     const dep1 = () => useContext(t1)(ask);
     const dep2 = () => useContext(t2)(ask);
@@ -74,7 +74,7 @@ describe('createReader', () => {
       )
     );
 
-    const ask = lookup(ctx);
+    const ask = find(ctx);
 
     const dep1 = () => useContext(t1)(ask);
     const dep2 = () => useContext(t2)(ask);

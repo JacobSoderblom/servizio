@@ -42,7 +42,7 @@ const resolveDependency =
       )
     );
 
-export const lookup =
+export const find =
   (ctx: Context) =>
   <T>(token: Token<T>): O.Option<T> =>
     pipe(
@@ -51,7 +51,7 @@ export const lookup =
       O.fold(() => O.none, O.some)
     );
 
-export const reader = pipe(R.ask<Context>(), R.map(lookup));
+export const reader = pipe(R.ask<Context>(), R.map(find));
 
 export const createContext =
   (ctx: Context = new Map() as Context) =>
