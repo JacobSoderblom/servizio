@@ -5,10 +5,10 @@ const SCOPE = process.env.SCOPE;
 const config = {
   rootDir: path.resolve(__dirname),
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
   },
   testEnvironment: 'node',
-  testRegex: 'test\.ts$',
+  testRegex: 'test.ts$',
   coverageDirectory: './coverage/',
   setupFiles: [],
   coveragePathIgnorePatterns: [
@@ -16,14 +16,10 @@ const config = {
     '@integration',
     '\\.test-(util|setup)\\.ts$',
     '\\.test\\.ts$',
-    'integration\\.ts$'
+    'integration\\.ts$',
   ],
-  collectCoverageFrom : ['packages/**/*.ts'],
-  moduleFileExtensions: [
-    'ts',
-    'js',
-    'json'
-  ],
+  collectCoverageFrom: ['packages/**/*.ts'],
+  moduleFileExtensions: ['ts', 'js', 'json'],
   globals: {
     'ts-jest': {
       tsconfig: path.join(path.dirname(__filename), './tsconfig.test.json'),
@@ -35,12 +31,12 @@ const config = {
 };
 
 if (SCOPE === 'integration') {
-  config.testRegex = 'integration\.test\.ts$';
+  config.testRegex = 'integration.test.ts$';
   console.info('RUNNING INTEGRATION TESTS');
 }
 
 if (SCOPE === 'unit') {
-  config.testRegex = '^((?!integration).)*\.test\.ts$';
+  config.testRegex = '^((?!integration).)*.test.ts$';
   console.info('RUNNING UNIT TESTS');
 }
 

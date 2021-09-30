@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/uuid": "^8",
     "fp-ts": "^2.11.3",
-    "rxjs": "^7.3.0"
+    "rxjs": "^7.3.0",
+    "typescript": "^4.4.3"
   }
 }
