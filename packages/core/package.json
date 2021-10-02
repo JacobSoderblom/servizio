@@ -15,6 +15,7 @@
   "packageManager": "yarn@3.0.2",
   "peerDependencies": {
     "fp-ts": "^2.11.3",
+    "io-ts": "*",
     "rxjs": "^7.3.0"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@types/uuid": "^8",
     "fp-ts": "^2.11.3",
+    "io-ts": "^2.2.16",
     "rxjs": "^7.3.0"
   }
 }
