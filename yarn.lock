@@ -966,11 +966,13 @@ __metadata:
   dependencies:
     "@types/uuid": ^8
     fp-ts: ^2.11.3
+    io-ts: ^2.2.16
     pino: next
     rxjs: ^7.3.0
     uuid: ^8.3.2
   peerDependencies:
     fp-ts: ^2.11.3
+    io-ts: "*"
     rxjs: ^7.3.0
   languageName: unknown
   linkType: soft
@@ -3624,6 +3626,15 @@ fsevents@^2.3.2:
     has: ^1.0.3
     side-channel: ^1.0.4
   checksum: 1944f92e981e47aebc98a88ff0db579fd90543d937806104d0b96557b10c1f170c51fb777b97740a8b6ddeec585fca8c39ae99fd08a8e058dfc8ab70937238bf
+  languageName: node
+  linkType: hard
+
+"io-ts@npm:^2.2.16":
+  version: 2.2.16
+  resolution: "io-ts@npm:2.2.16"
+  peerDependencies:
+    fp-ts: ^2.5.0
+  checksum: 1b5855682e413cc92cfb5c51d0bdb24c99e407ab4e67821a53078f5d8dedbc387840c5b240cb19dd5d542bbdd2e2317ece17674a674f3de561ca0f00ae765bba
   languageName: node
   linkType: hard
 
