@@ -1,4 +1,4 @@
-export type EventType = 'Event' | 'Command' | 'Reply';
+export type MessageType = 'Event' | 'Command' | 'Reply';
 
 export interface MessageMetadata extends Record<string, unknown> {
   correlationId?: string;
@@ -9,7 +9,7 @@ export interface MessageMetadata extends Record<string, unknown> {
 export interface MessagePayload<
   P = unknown,
   E = any,
-  T extends EventType = EventType
+  T extends MessageType = MessageType
 > {
   type: T;
   payload?: P;

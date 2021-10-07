@@ -1,10 +1,10 @@
 import { IO } from 'fp-ts/lib/IO';
 
 import { BoundedDependency, Context, createContext } from '../context/context';
-import { Transporter } from './transporter';
+import { Listener } from './listener';
 
 export interface ServerConfig {
-  transporters: Transporter[];
+  transporters: Listener[];
   dependencies?: BoundedDependency<unknown>[];
 }
 

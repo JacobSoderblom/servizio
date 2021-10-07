@@ -85,7 +85,6 @@ export class AmqpConnection implements TransportConnection<TransportType.AMQP> {
       map(
         (raw) =>
           ({
-            queue: '',
             data: raw.content,
             replyTo: raw.properties.replyTo,
             correlationId: raw.properties.correlationId,

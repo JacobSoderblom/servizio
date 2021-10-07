@@ -8,13 +8,14 @@
     "build": "tsc",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "test:unit": "jest --expand --coverage --detectOpenHandles",
+    "test:unit": "SCOPE=unit jest --expand --coverage --detectOpenHandles",
     "test:watch": "jest --expand --detectOpenHandles --watch",
     "test:ci": "jest --ci --expand --coverage --detectOpenHandles",
     "test:integration": "SCOPE=integration jest --expand --coverage --detectOpenHandles"
   },
   "packageManager": "yarn@3.0.2",
   "peerDependencies": {
+    "@servizio/core": "*",
     "fp-ts": "^2.11.3",
     "rxjs": "^7.3.0"
   },
@@ -23,6 +24,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@servizio/core": "workspace:*",
     "@types/amqplib": "^0",
     "@types/uuid": "^8",
     "fp-ts": "^2.11.3",

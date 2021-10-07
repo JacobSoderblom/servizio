@@ -21,5 +21,13 @@
     "lib": ["ES2020"],
     "baseUrl": "."
   },
-  "plugins": [{ "name": "typescript-workspace-plugin" }]
+  "plugins": [{ "name": "typescript-workspace-plugin" }],
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/messaging"
+    }
+  ]
 }

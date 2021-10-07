@@ -10,7 +10,9 @@ export interface Transport<T extends TransportType = TransportType> {
   type: T;
 }
 
-export interface TransportConnection<Type extends TransportType> {
+export interface TransportConnection<
+  Type extends TransportType = TransportType
+> {
   type: Type;
   send: (cmd: Command) => Promise<Error | boolean | Message<Buffer>>;
   reply: (cmd: Reply) => Promise<Error | boolean>;

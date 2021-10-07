@@ -18,7 +18,6 @@ const config = {
     '\\.test\\.ts$',
     'integration\\.ts$',
   ],
-  collectCoverageFrom: ['packages/**/*.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   globals: {
     'ts-jest': {
